@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<BaseLayout title="ポートフォリオ">
+  <section style="padding: 2rem; text-align: center;">
+    <h1>ポートフォリオサイトにようこそ！</h1>
+    <p>ここに大きなイラストを表示できます。</p>
+  </section>
+
+  <section style="padding: 2rem;">
+    <h2>作品一覧</h2>
+
+    <ul>
+      {posts.map((post) => {
+        const slug = post.id.replace(/\.md$/, '');
+        return (
+          <li>
+            <a href={`/posts/${slug}`}>{post.data.title}</a>
+          </li>
+        );
+      })}
+    </ul>
+  </section>
+</BaseLayout>
