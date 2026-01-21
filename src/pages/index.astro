@@ -14,7 +14,7 @@ const base = import.meta.env.BASE_URL;
 
     <div class='hero-text'>
       <h1>ねぎ's<br />ポートフォリオサイトへ<br />ようこそ!</h1>
-      <p>Live2D / ゲーム / 表現技術</p>
+      <p> Live2D / ゲーム / 表現技術</p>
     </div>
   </section>
 
@@ -75,6 +75,32 @@ const base = import.meta.env.BASE_URL;
   .hero-text p {
     font-size: 1.25rem;
     opacity: 0.8;
+  }
+  /* === Mobile layout === */
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      padding: 2rem;
+    }
+
+    .hero-image,
+    .hero-text {
+      flex: none;
+      width: 100%;
+    }
+
+    .hero-image {
+      margin-bottom: 2rem;
+    }
+
+    .hero-text {
+      padding-left: 0;
+      text-align: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+    }
   }
 </style>
 
