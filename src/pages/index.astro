@@ -22,6 +22,7 @@ const base = import.meta.env.BASE_URL;
 
   <section class="section about">
     <h2 class="section-title">About</h2>
+    <img src={`${base}images/icon.jpg`} class="about-icon" alt="icon" />
     <p class="about-text">
       はじめまして、ねぎと申します。私はLive2Dを中心に、ゲーム開発や表現技術に情熱を注いでいます。
       このポートフォリオサイトでは、私の作品やプロジェクトをご紹介しています。ぜひご覧ください。
@@ -98,5 +99,18 @@ const base = import.meta.env.BASE_URL;
     background-color: #3bb320;
   }
 
+  .about-title{ 
+    text-align: center;
+    color: white;
+  }
+
+  .about-icon {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
 </style>
 
