@@ -8,15 +8,33 @@ const base = import.meta.env.BASE_URL;
 
 <BaseLayout title="ポートフォリオ">
   <section class='hero'>
-    <div class='hero-image'>
+    <div class="hero-inner">
+      <div class='hero-image'>
       <img src={`${base}images/hero.png`} alt='Hero image' />
-    </div>
+      </div>
 
-    <div class='hero-text'>
-      <h1>ねぎ's<br />ポートフォリオサイトへ<br />ようこそ!</h1>
-      <p> Live2D / ゲーム / 表現技術</p>
+      <div class='hero-text'>
+        <h1>ねぎ's<br />ポートフォリオサイトへ<br />ようこそ!</h1>
+        <p> Live2D / ゲーム / 表現技術</p>
+      </div>
     </div>
   </section>
+
+  <section class="about">
+  <div class="about-inner">
+    <h2 class="about-title">About</h2>
+
+    <p class="about-lead">
+      ねぎ / ポートフォリオ制作者
+    </p>
+
+    <p class="about-text">
+      初めまして、ねぎと申します。私はLive2Dを使用したキャラクターモデリングや、ゲーム開発に情熱を注いでいます。  
+      このポートフォリオサイトでは、私の作品やプロジェクトを紹介しています。ぜひご覧ください。
+    </p>
+  </div>
+</section>
+
 
   <section style="padding: 2rem;">
     <h2>作品一覧</h2>
@@ -36,46 +54,76 @@ const base = import.meta.env.BASE_URL;
 
 <style>
   .hero {
-    display: flex;
-    min-height: 100vh;
-    padding: 4rem;
-    box-sizing: border-box;
+  margin-bottom: 0;
+  overflow: hidden; 
   }
 
-  .hero-image,
+  /* hero-image と hero-text を左右に並べる */
+  .hero-inner {
+    display: flex;
+    align-items: stretch;
+    min-height: 70vh;
+  }
+
   .hero-text {
     flex: 1;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column; /* hero-text と p を並べる方向 */
+    justify-content: center; 
+    /* gap: 1.5rem; h1 と p の間隔 */
   }
 
   .hero-image {
+    flex: 1;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-end; /* ← 下に寄せる */
   }
 
   .hero-image img {
-    max-width: 200%;
-    max-height: 80vh;
-    object-fit: contain;
-  }
-
-  .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 4rem;
+    width: 95%;
+    display: block;
   }
 
   .hero-text h1 {
-    font-size: 4rem;
+    font-size: 4.5rem;
     line-height: 1.2;
-    margin: 0 0 1rem;
+    margin: 8rem 0 1rem;
   }
 
   .hero-text p {
     font-size: 1.25rem;
     opacity: 0.8;
   }
+
+  .about {
+    margin-top: 0;
+    background-color: #3bb320;
+      padding: 120px 24px 160px;
+  }
+
+  .about-inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  .about-title {
+    font-size: 48px;
+    margin-bottom: 32px;
+  }
+
+  .about-lead {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  .about-text {
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 720px;
+  }
+
   /* === Mobile layout === */
   @media (max-width: 768px) {
     .hero {
@@ -101,6 +149,22 @@ const base = import.meta.env.BASE_URL;
     .hero-text h1 {
       font-size: 2.5rem;
     }
+
+    .about {
+    padding: 80px 16px;
   }
+
+  .about-title {
+    font-size: 32px;
+  }
+
+  .about-lead {
+    font-size: 18px;
+  }
+
+  .about-text {
+    font-size: 15px;
+  }
+}
 </style>
 
