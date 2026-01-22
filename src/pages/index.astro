@@ -7,7 +7,7 @@ const base = import.meta.env.BASE_URL;
 ---
 
 <BaseLayout title="ポートフォリオ">
-  <section class="hero">
+  <section id="top" class="hero">
     <div class="hero-inner">
       <div class='hero-image'>
       <img src={`${base}images/hero.png`} alt='Hero image' />
@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL;
     </div>
   </section>
 
-  <section class="section about">
+  <section id="about" class="section about">
     <h2 class="section-title">About</h2>
     <img src={`${base}images/icon.jpg`} class="about-icon" alt="icon" />
     <p class="about-text">
@@ -31,7 +31,7 @@ const base = import.meta.env.BASE_URL;
 
 
 
-  <section class="section works">
+  <section id="works" class="section works">
     <h2 class="section-title">Works</h2>
 
       <ul>
@@ -96,7 +96,7 @@ const base = import.meta.env.BASE_URL;
 
   .about {
     margin-top: 0;
-    background-color: #3bb320;
+    background-color: #5ad52a;
   }
 
   .about-title{ 
